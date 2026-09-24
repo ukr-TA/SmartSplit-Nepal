@@ -58,9 +58,9 @@ export default function Receipt() {
           <p>Split less. Settle smarter.</p>
           <small className="muted">
             {s.channel === 'simulation'
-              ? 'Demo simulation — no real money was transferred.'
+              ? 'Demo simulation - no real money was transferred.'
               : s.channel === 'sandbox'
-                ? 'Paid through the wallet’s test environment — no real money was transferred.'
+                ? 'Paid through the wallet’s test environment - no real money was transferred.'
                 : 'Cash settlement recorded in SmartSplit.'}
           </small>
         </footer>

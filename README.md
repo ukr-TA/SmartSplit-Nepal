@@ -13,7 +13,7 @@ SmartSplit Nepal is a group expense splitting and smart settlement web app. It i
 
 ![Dashboard](documentation/screenshots/dashboard.png)
 
-> Semester-end university project · Django REST Framework + React + PostgreSQL · runs on localhost
+Django REST Framework + React + PostgreSQL · runs on localhost
 
 ---
 
@@ -21,15 +21,15 @@ SmartSplit Nepal is a group expense splitting and smart settlement web app. It i
 
 | | |
 |---|---|
-| 🧮 **Smart settlement** | A greedy debt-minimisation algorithm (exact matches first) turns every shared expense into at most *n − 1* payments. In the Pokhara demo that is **3 payments instead of 10**. |
-| ➗ **Three split methods** | Equal, custom amounts and percentages, calculated in exact **paisa** so totals always match. The backend validates everything again. |
-| ⚡ **Quick Split wizard** | Details → Paid by → Split with → How to split → Review. The review screen shows every share and how each person's balance changes, *before* saving. |
-| 💸 **Payment Hub** | Balance → Settlement → Payment in three clicks. **eSewa** and **Khalti** run as an in-app simulation (works offline) or through the official **test gateways** (eSewa ePay v2 with an HMAC-SHA256 signature, Khalti KPG-2 with a lookup check). Every payment gets a transaction ID and a printable receipt. |
-| 🇳🇵 **Nepal-first** | NPR formatting (`Rs. 1,25,000`), login with a Nepali mobile number, member search by phone number, QR/link invitations, and local categories (rent, utilities…). |
-| ✈️ **Trip Mode** | Trip dates and a trip dashboard: total spent, spending by category, by member (paid vs fair share), and by day. |
-| 🤖 **Machine learning** | Two scikit-learn models trained on a Nepali expense dataset built from published prices and the real festival calendar: a text classifier that suggests the category as you type (97% accuracy, 0.96 macro F1) and a Random Forest that estimates what a group might spend next month, with a one-line reason (for example, Dashain falling on 11–25 October). Both fall back gracefully when the model files are absent. |
-| 🧾 **Transparency** | Receipt photo uploads, an activity timeline, useful notifications, and a full settlement history. |
-| 📱 **Polished UI** | A clean fintech style with cards, skeleton loaders, empty states, toasts and confirmation dialogs. Light and dark mode. It is responsive, with a bottom navigation bar on phones. |
+| **Smart settlement** | A greedy debt-minimisation algorithm (exact matches first) turns every shared expense into at most *n − 1* payments. In the Pokhara demo that is **3 payments instead of 10**. |
+| **Three split methods** | Equal, custom amounts and percentages, calculated in exact **paisa** so totals always match. The backend validates everything again. |
+| **Quick Split wizard** | Details → Paid by → Split with → How to split → Review. The review screen shows every share and how each person's balance changes, *before* saving. |
+| **Payment Hub** | Balance → Settlement → Payment in three clicks. **eSewa** and **Khalti** run as an in-app simulation (works offline) or through the official **test gateways** (eSewa ePay v2 with an HMAC-SHA256 signature, Khalti KPG-2 with a lookup check). Every payment gets a transaction ID and a printable receipt. |
+| **Nepal-first** | NPR formatting (`Rs. 1,25,000`), login with a Nepali mobile number, member search by phone number, QR/link invitations, and local categories (rent, utilities…). |
+| **Trip Mode** | Trip dates and a trip dashboard: total spent, spending by category, by member (paid vs fair share), and by day. |
+| **Machine learning** | Two scikit-learn models trained on a Nepali expense dataset built from published prices and the real festival calendar: a text classifier that suggests the category as you type (97% accuracy, 0.96 macro F1) and a Random Forest that estimates what a group might spend next month, with a one-line reason (for example, Dashain falling on 11–25 October). Both fall back gracefully when the model files are absent. |
+| **Transparency** | Receipt photo uploads, an activity timeline, useful notifications, and a full settlement history. |
+| **Polished UI** | A clean fintech style with cards, skeleton loaders, empty states, toasts and confirmation dialogs. Light and dark mode. It is responsive, with a bottom navigation bar on phones. |
 
 ## Screenshots
 
@@ -193,6 +193,6 @@ Released under the [MIT License](LICENSE).
 
 ## Author
 
-**Utsuk Kharel** - BSc Computer Science & AI student, Sunway College Kathmandu.
+**Utsuk Kharel**
 
 SmartSplit is inspired by the general shared-expense problem. Its branding, UI, workflow, data model and settlement implementation are original to this project.

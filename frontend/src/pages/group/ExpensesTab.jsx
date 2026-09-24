@@ -28,7 +28,7 @@ export default function ExpensesTab({ group, user, refresh, version }) {
         <EmptyState
           icon={Receipt}
           title="No expenses yet"
-          message="Hotel, food, transport — add what the group spent and SmartSplit will work out the shares."
+          message="Hotel, food, transport - add what the group spent and SmartSplit will work out the shares."
           action={<Link to={`/split?group=${group.id}`} className="btn btn-primary"><Plus size={16} /> Split Expense</Link>}
         />
       </div>

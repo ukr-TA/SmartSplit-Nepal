@@ -12,13 +12,13 @@ Output: a list of (debtor_id, creditor_id, amount_paisa) payments that brings
 Steps
 1. Drop people who are already settled (balance 0).
 2. Exact matches first: if a debtor owes exactly what a creditor is owed,
-   pair them — one payment clears two people at once.
+   pair them - one payment clears two people at once.
 3. Greedy matching: repeatedly take the person who owes the most and the
    person who is owed the most, and transfer min(owes, owed). At least one of
    the two is cleared by every payment.
 
 Because every payment clears at least one person, a group with N people who
-are not settled needs at most N - 1 payments — usually far fewer than paying
+are not settled needs at most N - 1 payments - usually far fewer than paying
 back every individual expense separately. (Finding the absolute minimum is an
 NP-hard problem; this greedy approach is the standard, predictable choice.)
 
@@ -44,7 +44,7 @@ def minimize_transactions(balances, order=None):
     creditors = {pid: amt for pid, amt in balances.items() if amt > 0}
     payments = []
 
-    # Step 2 — exact matches
+    # Step 2 - exact matches
     for debtor in sorted(debtors, key=lambda p: (-debtors[p], key(p))):
         for creditor in sorted(creditors, key=key):
             if creditors[creditor] == debtors[debtor]:
@@ -54,7 +54,7 @@ def minimize_transactions(balances, order=None):
                 break
     debtors = {p: a for p, a in debtors.items() if a > 0}
 
-    # Step 3 — greedy: biggest debtor pays biggest creditor
+    # Step 3 - greedy: biggest debtor pays biggest creditor
     while debtors and creditors:
         debtor = min(debtors, key=lambda p: (-debtors[p], key(p)))
         creditor = min(creditors, key=lambda p: (-creditors[p], key(p)))

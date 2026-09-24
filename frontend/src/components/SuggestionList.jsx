@@ -24,7 +24,7 @@ export default function SuggestionList({ groupId, suggestions, userId, stats, co
           <Sparkles size={18} />
           <span>
             Smart settlement needs <strong>{stats.smart_transactions}</strong> payment{stats.smart_transactions === 1 ? '' : 's'} instead of{' '}
-            <strong>{stats.direct_transactions}</strong> — {stats.direct_transactions - stats.smart_transactions} fewer transfers.
+            <strong>{stats.direct_transactions}</strong> - {stats.direct_transactions - stats.smart_transactions} fewer transfers.
           </span>
         </div>
       )}

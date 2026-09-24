@@ -28,7 +28,7 @@ export function ThemeProvider({ children }) {
       try {
         localStorage.setItem(STORAGE_KEY, next)
       } catch {
-        /* storage unavailable — the choice lasts until reload */
+        /* storage unavailable - the choice lasts until reload */
       }
       return next
     })

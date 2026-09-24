@@ -76,7 +76,7 @@ export default function AddMemberModal({ group, onClose, onAdded, onInvite }) {
         {shown && shown.length === 0 && !searching && (
           <div className="notice">
             {matchType === 'phone' && q.replace(/\D/g, '').length < 10
-              ? 'Keep typing — enter all 10 digits of the phone number.'
+              ? 'Keep typing - enter all 10 digits of the phone number.'
               : 'No registered SmartSplit user found. Share an invite link instead.'}
           </div>
         )}

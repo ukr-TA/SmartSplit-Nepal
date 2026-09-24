@@ -144,7 +144,7 @@ CORS_ALLOWED_ORIGINS = env_list(
 )
 
 # --------------------------------------------------------------------------
-# Internationalisation — Nepal first
+# Internationalisation - Nepal first
 # --------------------------------------------------------------------------
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kathmandu"
@@ -180,11 +180,11 @@ ML_MODELS_DIR = Path(env("ML_MODELS_DIR", str(BASE_DIR.parent / "ml" / "models")
 # --------------------------------------------------------------------------
 # Payments (eSewa / Khalti)
 # --------------------------------------------------------------------------
-# Where the React app runs — gateways send the user back here after paying.
+# Where the React app runs - gateways send the user back here after paying.
 FRONTEND_URL = env("FRONTEND_URL", "http://localhost:5173").rstrip("/")
 
 # eSewa ePay v2 TEST environment. These are eSewa's public test credentials
-# (published in eSewa's developer docs) — no real money is involved.
+# (published in eSewa's developer docs) - no real money is involved.
 ESEWA_ENABLED = env_bool("ESEWA_ENABLED", True)
 ESEWA_PRODUCT_CODE = env("ESEWA_PRODUCT_CODE", "EPAYTEST")
 ESEWA_SECRET_KEY = env("ESEWA_SECRET_KEY", "8gBm/:&EnhH.1/q")

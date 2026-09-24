@@ -37,7 +37,7 @@ function GroupPicker({ onPick }) {
         <EmptyState
           icon={Users}
           title="Create a group first"
-          message="Expenses belong to a group — like a trip, your flat or a project."
+          message="Expenses belong to a group - like a trip, your flat or a project."
           action={<Link to="/groups/new" className="btn btn-primary"><Plus size={16} /> Create group</Link>}
         />
       </div>
@@ -533,7 +533,7 @@ export default function SplitExpense() {
                       </span>
                     </td>
                     <td className="num">
-                      {r.not_participating ? <span className="muted">—</span> : <Money value={r.amount} />}
+                      {r.not_participating ? <span className="muted">-</span> : <Money value={r.amount} />}
                       {r.percentage != null && <small className="muted"> ({Number(r.percentage)}%)</small>}
                     </td>
                     <td className="num">

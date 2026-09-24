@@ -25,7 +25,7 @@ def from_paisa(paisa):
 
 
 def format_npr(value):
-    """Rs. 1,25,000 style (South Asian grouping) — used in notifications/activity."""
+    """Rs. 1,25,000 style (South Asian grouping) - used in notifications/activity."""
     amount = to_decimal(value)
     sign = "-" if amount < 0 else ""
     amount = abs(amount)

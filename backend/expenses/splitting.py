@@ -1,5 +1,5 @@
 """
-Expense splitting — turns an expense into per-person shares.
+Expense splitting - turns an expense into per-person shares.
 
 Every function returns a list of (user_id, amount_paisa, percentage) tuples whose
 amounts add up EXACTLY to the expense total. Working in integer paisa means

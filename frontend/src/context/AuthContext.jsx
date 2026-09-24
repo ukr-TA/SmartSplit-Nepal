@@ -17,7 +17,7 @@ function writeToken(token) {
     if (token) localStorage.setItem(TOKEN_KEY, token)
     else localStorage.removeItem(TOKEN_KEY)
   } catch {
-    /* storage unavailable (private mode) — session lasts until refresh */
+    /* storage unavailable (private mode) - session lasts until refresh */
   }
 }
 

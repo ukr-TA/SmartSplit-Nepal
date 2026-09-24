@@ -12,7 +12,7 @@ function ServerStatus() {
       .then(() => setStatus('ok'))
       .catch(() => setStatus('down'))
   }, [])
-  const text = { checking: 'Checking server…', ok: 'Server connected', down: 'Server offline — start the backend' }[status]
+  const text = { checking: 'Checking server…', ok: 'Server connected', down: 'Server offline - start the backend' }[status]
   return (
     <span className={`server-status ${status}`}>
       <span className="dot" /> {text}
@@ -31,7 +31,7 @@ export default function AuthLayout({ title, subtitle, children }) {
             <br />
             Settle smarter.
           </h2>
-          <p>Shared expenses for Nepali students, roommates, families and travellers — in rupees, with eSewa and Khalti.</p>
+          <p>Shared expenses for Nepali students, roommates, families and travellers - in rupees, with eSewa and Khalti.</p>
         </div>
         <div className="auth-demo-card">
           <div className="auth-demo-title">

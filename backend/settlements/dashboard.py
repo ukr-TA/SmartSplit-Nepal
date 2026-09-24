@@ -18,7 +18,7 @@ from .serializers import SettlementSerializer
 
 class DashboardView(APIView):
     """
-    GET /api/dashboard/ — everything the home screen needs in one request:
+    GET /api/dashboard/ - everything the home screen needs in one request:
     totals, per-group positions, what to pay / receive, and recent activity.
     """
 

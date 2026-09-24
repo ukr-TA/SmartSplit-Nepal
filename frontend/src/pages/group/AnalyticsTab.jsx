@@ -66,7 +66,7 @@ export default function AnalyticsTab({ group, user, version }) {
         <div className="stat-card tone-neutral">
           <span className="stat-icon"><Crown size={18} /></span>
           <span className="stat-label">Biggest category</span>
-          <strong className="stat-value small-value">{top ? categoryOf(top.category).label : '—'}</strong>
+          <strong className="stat-value small-value">{top ? categoryOf(top.category).label : '-'}</strong>
           {top && <span className="stat-hint">{Number(top.percentage)}% of spending</span>}
         </div>
       </div>

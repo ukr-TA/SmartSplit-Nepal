@@ -44,7 +44,7 @@ export default function SettlementsTab({ group, user, version }) {
         {history.loading ? (
           <CardSkeleton />
         ) : rows.length === 0 ? (
-          <EmptyState icon={HandCoins} title="No settlements yet" message="When someone pays back — by cash, eSewa or Khalti — it shows up here." />
+          <EmptyState icon={HandCoins} title="No settlements yet" message="When someone pays back - by cash, eSewa or Khalti — it shows up here." />
         ) : (
           <ul className="settlement-list">
             {rows.map((s) => <SettlementItem key={s.id} s={s} userId={user.id} />)}

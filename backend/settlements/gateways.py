@@ -3,9 +3,9 @@ eSewa and Khalti payment gateway helpers (sandbox / test environments).
 
 SmartSplit supports two ways of paying with eSewa or Khalti:
 
-* simulation — an in-app screen that looks like the wallet and generates a
+* simulation - an in-app screen that looks like the wallet and generates a
   mock transaction ID. Works offline; used for the classroom demo.
-* sandbox    — a real redirect to the wallet's official *test* environment
+* sandbox    - a real redirect to the wallet's official *test* environment
   using test credentials. No real money moves.
 
 Note: eSewa ePay and Khalti KPG pay a *merchant* account. Real peer-to-peer
@@ -54,7 +54,7 @@ def payment_config():
 
 
 def _amount_str(amount):
-    """eSewa expects plain numbers like 1250 or 1250.5 — no commas."""
+    """eSewa expects plain numbers like 1250 or 1250.5 - no commas."""
     amount = Decimal(amount).quantize(Decimal("0.01"))
     return format(amount.normalize(), "f") if amount == amount.to_integral() else str(amount)
 

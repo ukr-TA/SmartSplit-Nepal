@@ -31,7 +31,7 @@ export default function Groups({ createOpen = false }) {
     <div className="page">
       <PageHeader
         title="My Groups"
-        subtitle="Trips, flats, college projects and friends — each with its own balances."
+        subtitle="Trips, flats, college projects and friends - each with its own balances."
         actions={
           <button className="btn btn-primary" onClick={() => setCreating(true)}>
             <Plus size={18} /> Create group

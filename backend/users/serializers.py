@@ -16,7 +16,7 @@ def normalize_phone(value):
 
 
 def mask_phone(phone):
-    """98XXXX5678 — enough to recognise a friend without exposing the full number."""
+    """98XXXX5678 - enough to recognise a friend without exposing the full number."""
     if not phone or len(phone) < 6:
         return phone
     return f"{phone[:2]}XXXX{phone[-4:]}"
