@@ -1,0 +1,28 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+
+# Django uploads (receipts, profile pictures)
+backend/media/
+backend/staticfiles/
+
+# Secrets — only the .env.example files are committed
+.env
+.env.*
+!.env.example
+
+# Node / Vite
+node_modules/
+dist/
+*.log
+npm-debug.log*
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
