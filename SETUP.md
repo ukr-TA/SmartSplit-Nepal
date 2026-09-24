@@ -302,6 +302,10 @@ Want ready-made sample groups (College Project, Kathmandu Flat, Friends Hangout,
 python manage.py seed_demo --owner your-email@example.com
 ```
 
+Kathmandu Flat also gets 13 months of past bills and festival spending, settled at the end of each
+month, so the spending forecast has history to learn from. To start the sample groups again from
+scratch, add `--reset`.
+
 Or put them in a separate demo account (`demo@smartsplit.np` / `SmartSplit@123`):
 
 ```bash

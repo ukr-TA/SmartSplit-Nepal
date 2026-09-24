@@ -5,6 +5,7 @@ Create demo users (and optionally sample groups) for testing and the final demo.
     python manage.py seed_demo --owner you@mail.com # + sample groups for YOUR account
     python manage.py seed_demo --with-groups        # + sample groups for demo@smartsplit.np
     python manage.py seed_demo --owner you@mail.com --history 13  # a year of past bills and festivals
+    python manage.py seed_demo --owner you@mail.com --reset       # delete and rebuild the sample groups
 
 Safe to run more than once: existing users/groups are left alone.
 """
@@ -36,6 +37,7 @@ FRIENDS = [
     ("Bikash Tamang", "bikash@smartsplit.np", "9800000005"),
 ]
 DEMO_OWNER = ("Demo User", "demo@smartsplit.np", "9800000000")
+SAMPLE_GROUPS = ["College Project", "Kathmandu Flat", "Friends Hangout", "Pokhara Trip (Sample)"]
 
 
 class Command(BaseCommand):
@@ -48,6 +50,10 @@ class Command(BaseCommand):
             "--history", type=int, default=13,
             help="Months of past bills and festival spending to add to the flat group, so the "
                  "spending forecast has something to learn from (default 13, use 0 to skip)",
+        )
+        parser.add_argument(
+            "--reset", action="store_true",
+            help="Delete the owner's sample groups first and create them again",
         )
 
     def get_or_create_user(self, name, email, phone):
@@ -77,6 +83,13 @@ class Command(BaseCommand):
                 raise CommandError(f"No account with email {options['owner']}. Register in the app first.")
         else:
             owner, _ = self.get_or_create_user(*DEMO_OWNER)
+
+        if options["reset"]:
+            doomed = Group.objects.filter(name__in=SAMPLE_GROUPS, memberships__user=owner).distinct()
+            count = doomed.count()
+            for group in doomed:
+                group.delete()
+            self.stdout.write(f"  deleted  {count} sample groups")
 
         ram, sita, hari, mina, bikash = friends
         today = timezone.localdate()
@@ -151,14 +164,34 @@ class Command(BaseCommand):
     ]
 
     def add_history(self, group, owner, members, months=6):
-        """Add the same monthly bills for the past `months` months, with realistic variation."""
+        """Add the same monthly bills for the past `months` months, with realistic variation.
+
+        Flatmates take turns paying, and at the end of every past month they settle up, the way
+        real flatmates do. Only the current month is left open, so the balances on the dashboard
+        stay at the size of one month of bills.
+        """
         import random
+        from collections import defaultdict
+
+        from settlements.algorithm import minimize_transactions
 
         rng = random.Random(2026)
         today = timezone.localdate()
         everyone = [owner] + members
         payers = everyone
         created = 0
+        nets = defaultdict(lambda: defaultdict(int))  # (year, month) -> user_id -> paisa
+
+        def add(desc, amount, category, when, payer):
+            expense = Expense.objects.create(
+                group=group, description=desc, amount=amount, category=category,
+                date=when, paid_by=payer, created_by=owner,
+            )
+            month_net = nets[(when.year, when.month)]
+            month_net[payer.pk] += to_paisa(amount)
+            for uid, paisa, _ in split_equal(to_paisa(amount), [u.pk for u in everyone]):
+                ExpenseSplit.objects.create(expense=expense, user_id=uid, amount=from_paisa(paisa))
+                month_net[uid] -= paisa
 
         for back in range(months, 0, -1):
             year = today.year
@@ -168,13 +201,8 @@ class Command(BaseCommand):
                 year -= 1
             for index, (desc, base, category, day) in enumerate(self.MONTHLY_BILLS):
                 amount = Decimal(int(base * rng.uniform(0.88, 1.16) / 10) * 10)
-                date = datetime.date(year, month, min(day, 28))
-                expense = Expense.objects.create(
-                    group=group, description=desc, amount=amount, category=category,
-                    date=date, paid_by=payers[index % len(payers)], created_by=owner,
-                )
-                for uid, paisa, _ in split_equal(to_paisa(amount), [u.pk for u in everyone]):
-                    ExpenseSplit.objects.create(expense=expense, user_id=uid, amount=from_paisa(paisa))
+                add(desc, amount, category, datetime.date(year, month, min(day, 28)),
+                    payers[(index + back) % len(payers)])
                 created += 1
 
         # Festivals on their real dates, from the same calendar the ML model uses.
@@ -186,17 +214,36 @@ class Command(BaseCommand):
             for index, (desc, low, high, category) in enumerate(self.FESTIVAL_EXTRAS.get(key, [])):
                 amount = Decimal(int(rng.uniform(low, high) / 10) * 10)
                 when = start + datetime.timedelta(days=rng.randint(0, max(0, (peak - start).days)))
-                expense = Expense.objects.create(
-                    group=group, description=desc, amount=amount, category=category,
-                    date=when, paid_by=payers[(index + festivals) % len(payers)], created_by=owner,
-                )
-                for uid, paisa, _ in split_equal(to_paisa(amount), [u.pk for u in everyone]):
-                    ExpenseSplit.objects.create(expense=expense, user_id=uid, amount=from_paisa(paisa))
+                add(desc, amount, category, when, payers[(index + festivals) % len(payers)])
                 created += 1
             festivals += 1
 
+        # Settle every past month on its last day, by cash, eSewa or Khalti.
+        methods = [
+            (Settlement.Method.CASH, Settlement.Channel.CASH),
+            (Settlement.Method.ESEWA, Settlement.Channel.SIMULATION),
+            (Settlement.Method.KHALTI, Settlement.Channel.SIMULATION),
+        ]
+        order = {u.pk: u.full_name for u in everyone}
+        settlements = 0
+        for (year, month), month_net in sorted(nets.items()):
+            if (year, month) >= (today.year, today.month):
+                continue
+            next_first = datetime.date(year + month // 12, month % 12 + 1, 1)
+            paid_on = timezone.make_aware(datetime.datetime.combine(
+                next_first - datetime.timedelta(days=1), datetime.time(19, 30)))
+            for frm, to, paisa in minimize_transactions(dict(month_net), order):
+                method, channel = methods[settlements % len(methods)]
+                s = Settlement.objects.create(
+                    group=group, payer_id=frm, recipient_id=to, amount=from_paisa(paisa),
+                    method=method, channel=channel, status=Settlement.Status.SUCCESSFUL,
+                    created_by_id=frm, note=f"{paid_on:%B} bills",
+                )
+                Settlement.objects.filter(pk=s.pk).update(created_at=paid_on, completed_at=paid_on)
+                settlements += 1
+
         self.stdout.write(f"  created  {created} past expenses in {group.name} "
-                          f"({months} months, {festivals} festivals)")
+                          f"({months} months, {festivals} festivals, {settlements} month-end settlements)")
 
     # What a Kathmandu flat of three friends buys for each festival.
     FESTIVAL_EXTRAS = {
