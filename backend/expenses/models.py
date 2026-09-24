@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -27,7 +29,7 @@ class Expense(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name="expenses")
     description = models.CharField(max_length=120)
     amount = models.DecimalField(
-        max_digits=12, decimal_places=2, validators=[MinValueValidator(0.01)]
+        max_digits=12, decimal_places=2, validators=[MinValueValidator(Decimal("0.01"))]
     )
     category = models.CharField(max_length=20, choices=Category.choices, default=Category.OTHER)
     date = models.DateField(default=timezone.localdate)

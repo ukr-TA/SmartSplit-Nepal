@@ -26,3 +26,6 @@ npm-debug.log*
 .vscode/
 .idea/
 *.swp
+
+# Jupyter
+.ipynb_checkpoints/
