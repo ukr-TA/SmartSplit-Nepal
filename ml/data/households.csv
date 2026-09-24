@@ -1,0 +1,16 @@
+household,persona,group_type,celebration_profile,birthdays
+student_hostel_1,student_hostel,roommates,magar,04-24 08-18
+student_hostel_2,student_hostel,roommates,tamang,05-02 07-15
+student_hostel_3,student_hostel,roommates,hindu_hill,12-01
+student_home_1,student_home,college,newar,04-27 10-16
+student_home_2,student_home,college,gurung,12-13 12-24
+student_home_3,student_home,college,muslim,05-22
+working_bachelor_1,working_bachelor,roommates,sherpa,09-10
+working_bachelor_2,working_bachelor,roommates,christian,05-11 06-08
+working_bachelor_3,working_bachelor,roommates,hindu_hill,03-01 07-11
+family_1,family,family,hindu_hill,02-11 12-11
+family_2,family,family,newar,07-28
+family_3,family,family,madhesi,02-22
+trip_group_1,trip_group,trip,friends,
+trip_group_2,trip_group,trip,friends,
+trip_group_3,trip_group,trip,friends,

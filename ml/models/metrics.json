@@ -1,0 +1,256 @@
+{
+  "dataset": {
+    "expenses": 12822,
+    "unique_descriptions": 5342,
+    "households": 15,
+    "months": 36,
+    "date_range": [
+      "2023-10-01",
+      "2026-09-30"
+    ],
+    "categories": [
+      "education",
+      "entertainment",
+      "food",
+      "hotel",
+      "other",
+      "rent",
+      "shopping",
+      "transport",
+      "utilities"
+    ],
+    "festival_calendar_rows": 118,
+    "festival_share_of_expenses": 0.1417875526438933,
+    "festival_share_of_money": 0.15519103751502006
+  },
+  "classifier": {
+    "selected_model": "Logistic Regression",
+    "uses_amount_feature": true,
+    "test_accuracy": 0.9723655121591747,
+    "test_macro_f1": 0.960681004941072,
+    "cross_validation": [
+      {
+        "model": "Logistic Regression",
+        "cv macro F1": 0.9594781099658535,
+        "F1 std": 0.024729128088027488,
+        "cv accuracy": 0.9627043638237673
+      },
+      {
+        "model": "Linear SVM",
+        "cv macro F1": 0.9579284299272753,
+        "F1 std": 0.024667858839515642,
+        "cv accuracy": 0.960923410030486
+      },
+      {
+        "model": "Multinomial Naive Bayes",
+        "cv macro F1": 0.9534817931379791,
+        "F1 std": 0.016871496128983556,
+        "cv accuracy": 0.9619112572195704
+      }
+    ],
+    "per_class_f1": {
+      "education": 1.0,
+      "entertainment": 0.9775474956822107,
+      "food": 0.9753846153846154,
+      "hotel": 0.9263157894736842,
+      "other": 0.9712460063897763,
+      "rent": 0.8636363636363636,
+      "shopping": 1.0,
+      "transport": 0.9651741293532339,
+      "utilities": 0.966824644549763
+    }
+  },
+  "forecaster": {
+    "selected_model": "Random Forest",
+    "feature_set": "Festival calendar + same month last year",
+    "target": "total_npr",
+    "folds": [
+      [
+        "2025-09",
+        "2026-02"
+      ],
+      [
+        "2026-03",
+        "2026-09"
+      ]
+    ],
+    "serving_clamp": [
+      0.6,
+      1.6
+    ],
+    "by_group_type": [
+      {
+        "group_type": "college",
+        "months": 21,
+        "mean_actual": 61762.381,
+        "MAE": 16686.8954,
+        "MAPE": 0.3707
+      },
+      {
+        "group_type": "family",
+        "months": 21,
+        "mean_actual": 101508.3333,
+        "MAE": 25516.4035,
+        "MAPE": 0.2781
+      },
+      {
+        "group_type": "roommates",
+        "months": 42,
+        "mean_actual": 80663.6905,
+        "MAE": 28705.2893,
+        "MAPE": 0.4228
+      },
+      {
+        "group_type": "trip",
+        "months": 21,
+        "mean_actual": 22869.2857,
+        "MAE": 14292.5041,
+        "MAPE": 1.0015
+      }
+    ],
+    "features": [
+      "lag_1",
+      "lag_2",
+      "lag_3",
+      "rolling_3",
+      "month_sin",
+      "month_cos",
+      "grp_college",
+      "grp_family",
+      "grp_roommates",
+      "grp_trip",
+      "festival_intensity",
+      "intensity_lag_1",
+      "lag_12",
+      "has_lag_12"
+    ],
+    "comparison": [
+      {
+        "features": "Festival calendar + same month last year",
+        "model": "Random Forest",
+        "MAE (Rs.)": 22984.588848100837,
+        "MAPE": 0.4172026084684853,
+        "R2": 0.461279828967665,
+        "MAE fold 1": 23187.90136992444,
+        "MAE fold 2": 22781.276326277235
+      },
+      {
+        "features": "Festival calendar + same month last year",
+        "model": "Ridge (alpha=1.0)",
+        "MAE (Rs.)": 23580.810522907377,
+        "MAPE": 0.4098004558890595,
+        "R2": 0.46313605018009923,
+        "MAE fold 1": 24952.83942941308,
+        "MAE fold 2": 22208.781616401673
+      },
+      {
+        "features": "Festival calendar + same month last year",
+        "model": "Linear Regression",
+        "MAE (Rs.)": 23643.439275791236,
+        "MAPE": 0.40854453566797844,
+        "R2": 0.4623671548684069,
+        "MAE fold 1": 25046.882544051456,
+        "MAE fold 2": 22239.996007531012
+      },
+      {
+        "features": "Festival calendar + same month last year",
+        "model": "Gradient Boosting",
+        "MAE (Rs.)": 23927.957057760457,
+        "MAPE": 0.43004082328698984,
+        "R2": 0.4071614759263663,
+        "MAE fold 1": 23948.933806547124,
+        "MAE fold 2": 23906.98030897379
+      },
+      {
+        "features": "Oct/Nov flag (old)",
+        "model": "Random Forest",
+        "MAE (Rs.)": 25281.692949105214,
+        "MAPE": 0.4384263842167372,
+        "R2": 0.3437021231506283,
+        "MAE fold 1": 21980.84465304834,
+        "MAE fold 2": 28582.541245162083
+      },
+      {
+        "features": "Festival calendar",
+        "model": "Gradient Boosting",
+        "MAE (Rs.)": 25298.356423579335,
+        "MAPE": 0.4646050979284734,
+        "R2": 0.3632060059778867,
+        "MAE fold 1": 24823.18617999073,
+        "MAE fold 2": 25773.52666716794
+      },
+      {
+        "features": "Festival calendar",
+        "model": "Random Forest",
+        "MAE (Rs.)": 25354.881695983306,
+        "MAPE": 0.4645886387918267,
+        "R2": 0.35720578787732893,
+        "MAE fold 1": 23064.545988574697,
+        "MAE fold 2": 27645.21740339192
+      },
+      {
+        "features": "Festival calendar",
+        "model": "Linear Regression",
+        "MAE (Rs.)": 25432.74229593632,
+        "MAPE": 0.4195767972760984,
+        "R2": 0.3811273876886571,
+        "MAE fold 1": 26887.361373109445,
+        "MAE fold 2": 23978.123218763198
+      },
+      {
+        "features": "Festival calendar",
+        "model": "Ridge (alpha=1.0)",
+        "MAE (Rs.)": 25460.891835745446,
+        "MAPE": 0.4226837767150585,
+        "R2": 0.3811670047909611,
+        "MAE fold 1": 26986.71642345207,
+        "MAE fold 2": 23935.06724803882
+      },
+      {
+        "features": "Oct/Nov flag (old)",
+        "model": "Gradient Boosting",
+        "MAE (Rs.)": 25767.58052509329,
+        "MAPE": 0.45507192649080785,
+        "R2": 0.35595347705261715,
+        "MAE fold 1": 25044.021771456664,
+        "MAE fold 2": 26491.139278729912
+      },
+      {
+        "features": "Oct/Nov flag (old)",
+        "model": "Linear Regression",
+        "MAE (Rs.)": 26314.273005946274,
+        "MAPE": 0.4455795272306613,
+        "R2": 0.3788468055980492,
+        "MAE fold 1": 28241.957848611964,
+        "MAE fold 2": 24386.588163280583
+      },
+      {
+        "features": "Oct/Nov flag (old)",
+        "model": "Ridge (alpha=1.0)",
+        "MAE (Rs.)": 26368.10112085072,
+        "MAPE": 0.4504461025054346,
+        "R2": 0.3770988854793717,
+        "MAE fold 1": 28357.75099277265,
+        "MAE fold 2": 24378.451248928784
+      },
+      {
+        "features": "baseline",
+        "model": "Naive (3-month average)",
+        "MAE (Rs.)": 30690.92328042328,
+        "MAPE": 0.48151884131578226,
+        "R2": 0.10655011270019388,
+        "MAE fold 1": 35357.25925925926,
+        "MAE fold 2": 26024.587301587304
+      },
+      {
+        "features": "baseline",
+        "model": "Naive (last month)",
+        "MAE (Rs.)": 35283.0753968254,
+        "MAPE": 0.5519011149622486,
+        "R2": -0.344669232753831,
+        "MAE fold 1": 36036.055555555555,
+        "MAE fold 2": 34530.09523809524
+      }
+    ]
+  }
+}

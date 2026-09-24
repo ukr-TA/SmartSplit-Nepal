@@ -1,0 +1,10 @@
+# Extra packages needed only to run the notebook (the API itself needs just the
+# packages in backend/requirements.txt).
+#
+#   source backend/venv/bin/activate
+#   pip install -r ml/requirements.txt
+#   jupyter notebook ml/notebooks/smartsplit_ml.ipynb
+jupyter==1.1.1
+matplotlib==3.11.2
+notebook==7.6.3
+seaborn==0.13.2

@@ -1,0 +1,52 @@
+item,category,unit,price_low_npr,price_high_npr,region,as_of,source_name,source_url
+Petrol (MS),transport,litre,200,200,"Kathmandu depot band 1",2026-09-24,Nepal Oil Corporation retail price (via Artha Kendra),https://arthakendra.com/fuel-price-in-nepal
+Diesel (HSD),transport,litre,200,200,"Kathmandu depot band 1",2026-09-24,Nepal Oil Corporation retail price (via Artha Kendra),https://arthakendra.com/fuel-price-in-nepal
+LPG cylinder (14.2 kg domestic),utilities,cylinder,2050,2060,Nepal,2026-09-24,Nepal Oil Corporation / PriceNepal,https://www.pricenepal.com/lpg-gas-price-nepal/
+LPG cylinder (5 kg),utilities,cylinder,700,700,Nepal,2026-04-01,PriceNepal,https://www.pricenepal.com/lpg-gas-price-nepal/
+NEA electricity 51-150 units slab,utilities,unit,11,11,Nepal,2026-05-06,NEA domestic tariff FY 2082/83 (via PriceNepal),https://www.pricenepal.com/electricity-unit-price-nepal-nea-tariff-2026/
+NEA electricity 151-250 units slab,utilities,unit,12,12,Nepal,2026-05-06,NEA domestic tariff FY 2082/83 (via PriceNepal),https://www.pricenepal.com/electricity-unit-price-nepal-nea-tariff-2026/
+NEA electricity 251+ units slab,utilities,unit,13,13,Nepal,2026-05-06,NEA domestic tariff FY 2082/83 (via PriceNepal),https://www.pricenepal.com/electricity-unit-price-nepal-nea-tariff-2026/
+NEA monthly service charge,utilities,month,30,50,Nepal,2026-05-06,NEA domestic tariff FY 2082/83 (via PriceNepal),https://www.pricenepal.com/electricity-unit-price-nepal-nea-tariff-2026/
+NTC data pack 1 GB,utilities,pack,29,29,Nepal,2026-05-01,PriceNepal NTC vs Ncell comparison,https://www.pricenepal.com/ntc-ncell-data-pack-price-nepal-2026/
+NTC data pack 5 GB / 7 days,utilities,pack,109,109,Nepal,2026-05-01,PriceNepal NTC vs Ncell comparison,https://www.pricenepal.com/ntc-ncell-data-pack-price-nepal-2026/
+NTC data pack 20 GB / 30 days,utilities,pack,399,399,Nepal,2026-05-01,PriceNepal NTC vs Ncell comparison,https://www.pricenepal.com/ntc-ncell-data-pack-price-nepal-2026/
+Ncell Unlimited Combo (28 days),utilities,pack,199,699,Nepal,2026-05-01,PriceNepal NTC vs Ncell comparison,https://www.pricenepal.com/ntc-ncell-data-pack-price-nepal-2026/
+Home internet 200-225 Mbps (monthly equivalent),utilities,month,775,999,Nepal,2026-01-01,PriceNepal ISP comparison,https://www.pricenepal.com/internet-plan-price-nepal-2026/
+Home internet annual plan,utilities,year,9292,11988,Nepal,2026-01-01,PriceNepal ISP comparison,https://www.pricenepal.com/internet-plan-price-nepal-2026/
+Potato (red),food,kg,48,48,Kalimati wholesale,2026-09-01,Kalimati Fruits and Vegetables Market Development Committee (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Onion (Indian dried),food,kg,90,90,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Tomato (big Nepali),food,kg,70,70,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Cauliflower,food,kg,70,70,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Carrot (local),food,kg,80,80,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Apple (fuji),food,kg,350,350,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Banana (Nepali),food,dozen,180,250,Kalimati wholesale,2026-09-01,Kalimati market (via Artha Khabar),https://arthakhabar.com/en/2026/09/01/96377/
+Momo plate (street / local),food,plate,70,120,Kathmandu,2025-01-01,Hamrobazar listing / local menu range,https://hamrobazaar.com/
+Momo plate (restaurant),food,plate,150,280,Kathmandu,2026-01-01,Restaurant menu range (Tripadvisor listings),https://www.tripadvisor.com/Restaurant_Review-g293890-d6851654-Reviews-New_Everest_Momo_Center-Kathmandu_Kathmandu_Valley_Bagmati_Zone_Central_Region.html
+Thakali khana set,food,set,350,650,Kathmandu,2026-01-01,BiteOut restaurant price listing,https://biteout.app/dishes/thakali
+Inexpensive restaurant meal,food,meal,250,350,Kathmandu,2025-01-01,Cost of study and living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Single public bus fare,transport,trip,25,35,Kathmandu Valley,2025-01-01,Cost of living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Monthly transport pass,transport,month,1400,1600,Kathmandu Valley,2025-01-01,Cost of living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Kathmandu-Pokhara deluxe bus ticket,transport,ticket,1200,1400,Nepal,2026-01-01,Pride Nepal Travel timetable,https://pridenepaltravel.com/kathmandu-to-pokhara-tourist-bus-timetable/
+Kathmandu-Pokhara super deluxe bus ticket,transport,ticket,1400,1600,Nepal,2026-01-01,Pride Nepal Travel timetable,https://pridenepaltravel.com/kathmandu-to-pokhara-tourist-bus-timetable/
+Kathmandu-Pokhara VIP / sofa bus ticket,transport,ticket,1600,2000,Nepal,2026-01-01,Pride Nepal Travel timetable,https://pridenepaltravel.com/kathmandu-to-pokhara-tourist-bus-timetable/
+Greenline luxury coach ticket,transport,ticket,2500,2800,Nepal,2026-01-01,Pride Nepal Travel timetable,https://pridenepaltravel.com/kathmandu-to-pokhara-tourist-bus-timetable/
+Cinema ticket (morning / budget hall),entertainment,ticket,150,200,Kathmandu,2026-01-01,Showtime Nepal ticket price comparison,https://www.showtimenepal.com/theater/ticket-prices
+Cinema ticket (evening standard),entertainment,ticket,300,400,Kathmandu,2026-01-01,Showtime Nepal ticket price comparison,https://www.showtimenepal.com/theater/ticket-prices
+Cinema ticket (premium recliner / sofa),entertainment,ticket,550,800,Kathmandu,2026-01-01,Showtime Nepal ticket price comparison,https://www.showtimenepal.com/theater/ticket-prices
+Paragliding Sarangkot (tandem),entertainment,person,11000,12500,Pokhara,2025-01-01,Hiking Annapurna paragliding price page,https://www.hikingannapurna.com/pokhara-paragliding
+Budget hotel room Pokhara Lakeside,hotel,night,1500,3000,Pokhara,2026-01-01,"Hotel listing rates (Kayak / Travelocity, USD 11-21 converted)",https://www.kayak.com/Pokhara-Hotels-Hotel-Lakeside.3745012.ksp
+Single room rent (student),rent,month,5000,7000,"Kirtipur, Kathmandu",2025-01-01,Room Sewa / EasyRent listings,https://roomsewa.com.np/room/single-room-for-rent-kirtipur-jakha-2226
+Shared room rent (outside centre),rent,month,12000,16000,Kathmandu,2025-01-01,Cost of living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Private 1-bedroom rent (central),rent,month,28000,34000,Kathmandu,2025-01-01,Cost of living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Bachelor programme fee (public campus - full),education,programme,300000,400000,Nepal,2025-01-01,Cost of study guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Bachelor programme fee (private college - full),education,programme,500000,850000,Kathmandu,2025-01-01,Cost of study guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Semester fee instalment (private college),education,semester,60000,110000,Kathmandu,2025-01-01,Derived from programme fee over 8 semesters (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Student monthly living budget,other,month,15000,35000,Kathmandu,2025-01-01,Cost of living guide (Amar Nepal),https://amarnepal.com/topics/cost-to-study-in-nepal-fees-living-costs-by-program
+Annual per capita consumption expenditure (Kathmandu Valley urban),other,year,263318,263318,Kathmandu Valley,2023-01-01,Nepal Living Standards Survey IV 2022/23,https://data.nsonepal.gov.np/dataset/b6c3c19b-4b15-44bf-8653-1571e76dad14/resource/e2d52301-1c25-498b-8732-4326c62a2372/download/nlss-iv.pdf
+Dashain national spending estimate,other,festival,200000000000,200000000000,Nepal,2025-01-01,Economics of Dashain (eStartup Nepal),https://estartupnepal.com/article/economics-of-dashain-in-nepal
+Dashain petroleum consumption rise,transport,percent,29,29,Nepal,2025-01-01,Economics of Dashain (eStartup Nepal),https://estartupnepal.com/article/economics-of-dashain-in-nepal
+Goat meat (khasi),food,kg,1300,1600,Kathmandu,2025-10-01,"Retail meat price guide (ktm2day); Dashain fixed rates Rs 1,000-1,300/kg",https://www.ktm2day.com/meat-price-nepal/
+Live goat for Dashain,food,goat,30000,45000,Kathmandu,2021-10-01,Nepal News - goat prices during Dashain,https://english.nepalnews.com/s/capital/goat-prices-double-in-price/
+Marigold garland (Tihar),shopping,mala,1000,1000,Kathmandu,2025-10-20,Nepal News - Tihar flower prices,https://english.nepalnews.com/s/business/flower-prices-skyrocket-during-tihar-a-single-marigold-costs-rs-40/
+Single marigold flower (Tihar),shopping,flower,40,45,Kathmandu,2025-10-20,Nepal News - Tihar flower prices,https://english.nepalnews.com/s/business/flower-prices-skyrocket-during-tihar-a-single-marigold-costs-rs-40/
+Dry fruits (Tihar),food,kg,1200,3000,Kathmandu,2025-10-21,Kathmandu Post - dry fruit prices this Tihar,https://kathmandupost.com/money/2025/10/21/most-dry-fruit-prices-steady-this-tihar-despite-strong-dollar
